@@ -1,3 +1,129 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 body {
   font-family: 'Glober', 'Roboto', sans-serif; }
+  body strong {
+    font-weight: 800; }
+
+#logo img {
+  margin-top: 25px;
+  margin-bottom: 12px; }
+
+#tap-to-talk a {
+  color: #000;
+  font-weight: 800; }
+  #tap-to-talk a span {
+    color: #54b8cd; }
+
+#tap-to-talk p {
+  font-weight: 100; }
+
+#introducing {
+  background: transparent top left repeat-x url(../img/bg-green-leaves.jpg);
+  color: #fff;
+  text-align: center; }
+  #introducing h1 {
+    display: inline-block;
+    position: relative;
+    font-size: 21px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 33px;
+    margin-bottom: 12px;
+    text-align: center; }
+    #introducing h1:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -75px;
+      width: 68px;
+      height: 2px;
+      background-color: #fff; }
+    #introducing h1:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: -75px;
+      width: 68px;
+      height: 2px;
+      background-color: #fff; }
+  #introducing h2 {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 40px;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 24px; }
+    #introducing h2 em {
+      font-size: 32px;
+      font-style: normal;
+      background: transparent bottom left no-repeat url(../img/bg-underline.png);
+      padding-bottom: 4px; }
+    #introducing h2 sup {
+      font-size: 25px; }
+
+#video h1 {
+  font-size: 21px;
+  margin-top: 12px;
+  margin-bottom: 15px; }
+
+#bundles .bundle {
+  -webkit-box-shadow: 0 0 7px #a5a5a5;
+  -moz-box-shadow: 0 0 7px #a5a5a5;
+  box-shadow: 0 0 7px #a5a5a5;
+  text-align: center;
+  padding-top: 15px;
+  margin: 30px 57px 0 57px; }
+  #bundles .bundle h1 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 12px; }
+  #bundles .bundle h2 {
+    color: #008ba4;
+    font-size: 19px;
+    font-weight: 100;
+    margin-top: 12px; }
+  #bundles .bundle img {
+    display: block;
+    margin: 30px auto 12px auto; }
+  #bundles .bundle .price {
+    display: inline-block;
+    position: relative;
+    clear: both;
+    font-size: 30px;
+    font-weight: 800; }
+    #bundles .bundle .price sup {
+      font-size: 19px; }
+    #bundles .bundle .price:after {
+      content: "USD";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: -30px;
+      margin-top: -10%;
+      font-size: 12px;
+      text-decoration: underline; }
+  #bundles .bundle .discount {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-box-shadow: 0 0 7px #a5a5a5;
+    -moz-box-shadow: 0 0 7px #a5a5a5;
+    box-shadow: 0 0 7px #a5a5a5;
+    position: absolute;
+    top: -12px;
+    right: -25px;
+    width: 70px;
+    height: 70px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 20px;
+    text-transform: uppercase;
+    background-color: #e87b15;
+    padding-top: 17px; }
+    #bundles .bundle .discount em {
+      font-size: 22px;
+      font-style: normal; }

@@ -1,5 +1,197 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+@import "mixins";
+
+$blue: #54b8cd;
+$dark-blue: #008ba4;
+$orange: #e87b15;
+$box-shadow-color: #a5a5a5;
+$bold: 800;
+$semi-bold: 500;
+$normal: 300;
+
 body {
   font-family: 'Glober', 'Roboto', sans-serif;
+
+  strong {
+    font-weight: 800;
+  }
+
+}
+
+#logo {
+
+  img {
+    margin-top: 25px;
+    margin-bottom: 12px;
+  }
+
+}
+
+#tap-to-talk {
+
+  a {
+    color: #000;
+    font-weight: 800;
+
+    span {
+        color: $blue;
+    }
+
+  }
+
+  p {
+      font-weight: 100;
+  }
+
+}
+
+#introducing {
+    background: transparent top left repeat-x url(../img/bg-green-leaves.jpg);
+    color: #fff;
+    text-align: center;
+
+    h1 {
+       display: inline-block;
+       position: relative;
+       font-size: 21px;
+       font-weight: 800;
+       text-transform: uppercase;
+       text-align: center;
+       margin-top: 33px;
+       margin-bottom: 12px;
+       text-align: center;
+
+       &:before {
+           content: " ";
+           display: block;
+           position: absolute;
+           top: 50%;
+           left: -75px;
+           width: 68px;
+           height: 2px;
+           background-color: #fff;
+       }
+
+       &:after {
+           content: " ";
+           display: block;
+           position: absolute;
+           top: 50%;
+           right: -75px;
+           width: 68px;
+           height: 2px;
+           background-color: #fff;
+       }
+
+   }
+
+   h2 {
+       font-size: 25px;
+       font-weight: 800;
+       line-height: 40px;
+       text-align: left;
+       margin-top: 12px;
+       margin-bottom: 24px;
+
+       em {
+           font-size: 32px;
+           font-style: normal;
+           background: transparent bottom left no-repeat url(../img/bg-underline.png);
+           padding-bottom: 4px;
+       }
+
+       sup {
+           font-size: 25px;
+       }
+
+   }
+
+}
+
+#video {
+
+  h1 {
+    font-size: 21px;
+    margin-top: 12px;
+    margin-bottom: 15px;
+  }
+
+}
+
+#bundles {
+
+  .bundle {
+    @include box-shadow(0, 0, 7px, $box-shadow-color);
+    text-align: center;
+    padding-top: 15px;
+    margin: 30px 57px 0 57px;
+
+    h1 {
+        font-size: 25px;
+        font-weight: 800;
+        margin-top: 12px;
+    }
+
+    h2 {
+        color: $dark-blue;
+        font-size: 19px;
+        font-weight: 100;
+        margin-top: 12px;
+    }
+
+    img {
+        display: block;
+        margin: 30px auto 12px auto;
+    }
+
+    .price {
+        display: inline-block;
+        position: relative;
+        clear: both;
+        font-size: 30px;
+        font-weight: 800;
+
+        sup {
+          font-size: 19px;
+        }
+
+        &:after {
+            content: "USD";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            margin-top: -10%;
+            font-size: 12px;
+            text-decoration: underline;
+        }
+
+    }
+
+    .discount {
+      @include rounded(100%);
+      @include box-shadow(0, 0, 7px, $box-shadow-color);
+      position: absolute;
+      top: -12px;
+      right: -25px;
+      width: 70px;
+      height: 70px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: $bold;
+      line-height: 20px;
+      text-transform: uppercase;
+      background-color: $orange;
+      padding-top: 17px;
+
+      em {
+        font-size: 22px;
+        font-style: normal;
+      }
+
+    }
+
+  }
+
 }
