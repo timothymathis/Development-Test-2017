@@ -10,82 +10,283 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="icon" type="image/icon" href="favicon.ico" />
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     </head>
     <body>
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
+      <header class="container-fluid">
+        <div class="row">
+          <div id="logo" class="col-md-2 col-sm-12">
+            <a href="/">
+              <img src="img/logo-algaecal.jpg" alt="AlgaeCal">
+            </a>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right" role="form">
-              <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
-              </div>
-              <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control">
-              </div>
-              <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-          </div><!--/.navbar-collapse -->
+          <div id="tap-to-talk" class="col-md-3 col-md-offset-7 col-sm-12">
+            <a href="tel:{{ PhoneNumber }}">
+              Tap to Talk <span>{{ PhoneNumber }}</span>
+            </a>
+            <p>Speak to our Bone Health Specialists</p>
+          </div>
         </div>
-      </nav>
+      </header>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      <!-- Introduction -->
+      <section id="introducing" class="container-fluid">
+        <h1>Introducing</h1>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-12">
+            <h2>
+              The ONLY Calcium Supplement that
+              <em>Increases Bone Density<sup>*</sup></em>
+              ...or Your Money Back
+            </h2>
+          </div>
         </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </section><!-- End Introduction -->
+
+      <!-- Video -->
+      <section id="video" class="container-fluid">
+        <h1>Build <strong>brand new bone</strong> WITHIN 6 MONTHS with this <strong>rare algae</strong> calcium ...even if you're 85!</h1>
+        <img src="http://placehold.it/342x190">
+      </section><!-- End Video -->
+
+      <!-- Bundles -->
+      <a name="bundles"></a>
+      <section id="bundles" class="container-fluid">
+        <div class="row">
+          <div class="bundle col-md-4 col-sm-12">
+            <h1>3 Month Supply</h1>
+            <h2>
+              4 AlgaeCal Plus <br>
+              3 Strontium Boost
+            </h2>
+            <img src="http://placehold.it/210x140" alt="">
+            <div class="price">$233</div>
+            <div class="daily-rate">Only <strong>$2.58</strong>/Day!</div>
+            <a class="add-to-cart" href="https://www.algaecal.com/product/bone-builder-packs/">Add to Cart</a>
+            <div class="discount">20% off</div>
+          </div>
+          <div class="most-popular bundle col-md-4 col-sm-12">
+            <h1>6 Month Supply</h1>
+            <h2>
+              8 AlgaeCal Plus <br>
+              6 Strotium Boost
+            </h2>
+            <img src="http://placehold.it/210x140" alt="">
+            <div class="price">$337</div>
+            <div class="daily-rate">Only <strong>$2.09</strong>/Day!</div>
+            <a class="add-to-cart" href="https://www.algaecal.com/product/bone-builder-packs/">Add to Cart</a>
+            <div class="discount">35% off</div>
+          </div>
+          <div class="bundle col-md-4 col-sm-12">
+            <h1>12 Month Suppy</h1>
+            <h2>
+              16 AlgaeCal Plus <br>
+              12 Strontium Boost
+            </h2>
+            <img src="http://placehold.it/210x140" alt="">
+            <div class="price">$717</div>
+            <div class="daily-rate">Only <strong>$1.97</strong>/Day!</div>
+            <a class="add-to-cart" href="https://www.algaecal.com/product/bone-builder-packs/">Add to Cart</a>
+            <div class="discount">38% off</div>
+          </div>
         </div>
-      </div>
+      </section><!-- End Bundles -->
 
-      <hr>
+      <!-- Supplement Facts -->
+      <section id="supplement-facts" class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 col-md-offset-2 col-sm-12">
+            <h1>AlgaeCal Plus</h1>
+            <table>
+              <thead>Supplement Facts</thead>
+              <tr><td colspan="2">4 Capsules Per Day</td></tr>
+              <tr><td colspan="2">Servings Per Container: 22</td></tr>
+              <tr><td class="thick bar" colspan="2"></td></tr>
+              <tr>
+                <td>Amount Per Serving</td>
+                <td>%DV</td>
+              </tr>
+              <tr><td class="thin bar" colspan="2"></td></tr>
+              <tr>
+                <td>
+                  Vitamin C 50mg <br>
+                  (as calcium ascorbate)
+                </td>
+                <td>84%</td>
+              </tr>
+              <tr>
+                <td>
+                  Vitamin D3 1600 IU <br>
+                  (as cholecalciferol)
+                </td>
+                <td>400%</td>
+              </tr>
+              <tr>
+                <td>
+                  Vitamin K2 100 mcg <br>
+                  (as menaquinone-7)
+                </td>
+                <td>126%</td>
+              </tr>
+              <tr>
+                <td>
+                  Calcium 720 mg <br>
+                  (from algas calcareas)
+                </td>
+                <td>72%</td>
+              </tr>
+              <tr>
+                <td>
+                  Magnesium 350 mg <br>
+                  (from algas calcareas and magnesium oxide)
+                </td>
+                <td>88%</td>
+              </tr>
+              <tr><td class="thick bar" colspan="2"></td></tr>
+              <tr>
+                <td>
+                  Boron 3.0 mg <br>
+                  (as glycinate)
+                </td>
+                <td></td>
+              </tr>
+              <tr><td class="thick bar" colspan="2"></td></tr>
+              <tr><td colspan="2">*Daily Value (DV) not established</td></tr>
+            </table>
+          </div>
+          <div class="col-md-3 col-md-offset-2 col-sm-12">
+            <h1>Strontium Boost</h1>
+            <table>
+              <thead>Supplement Facts</thead>
+              <tr><td colspan="2">2 Capsules Per Day</td></tr>
+              <tr><td colspan="2">Servings Per Container: 30</td></tr>
+              <tr><td class="thick bar" colspan="2"></td></tr>
+              <tr>
+                <td>Amount Per Serving</td>
+                <td></td>
+              </tr>
+              <tr><td class="thin bar" colspan="2"></td></tr>
+              <tr>
+                <td>
+                  Strontium <br>
+                  (from Strontium Citrate)
+                </td>
+                <td>680 mg*</td>
+              </tr>
+              <tr><td class="thick bar" colspan="2"></td></tr>
+              <tr><td colspan="2">*Daily Value (DV) not established</td></tr>
+            </table>
+          </div>
+        </div>
+      </section><!-- End Supplement Facts -->
 
-      <footer>
-        <p>&copy; Company 2015</p>
+      <!-- Guarantee -->
+      <section id="guarantee" class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <img src="http://placehold.it/165x165" alt="">
+            <h1>Stronger Bones For 7 Years Guarantee</h1>
+            <p>
+              When you follow directions for use of AlgaeCal Plus and Strontium
+              Boost &ndash; we guarantee you will see increased bone density in
+              Every follow-up bone scan you have while using these 2 products &ndash;
+              or we will refund every penny you oaid for our products between your
+              scans. This guarantee extends to every scan you have for the next 7
+              years! Also, if you are unsatisfied at any time you can return my
+              product for a full refund, no questions asked!
+              <a href="#">Click Here for Details</a>
+            </p>
+            <aside>
+              <img src="http://placehold.it/90x90" alt="Dean Neuls">
+              <img src="http://placehold.it/175x45" alt="Dean Neuls' signature">
+              <p>
+                <strong>Dean Neuls,</strong> <br>
+                CEO and Co-Founder, <br>
+                AlgaeCal Inc.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section><!-- End Guarantee -->
+
+      <!-- As Seen On -->
+      <section id="as-seen-on" class="container-fluid">
+        <h1>As Seen On:</h1>
+        <div class="row">
+          <div class="col-sm-3"><img src="http://placehold.it/50x30" alt="The Dr. Oz Show"></div>
+          <div class="col-sm-3"><img src="http://placehold.it/40x30" alt="Fox News Channel"></div>
+          <div class="col-sm-3"><img src="http://placehold.it/60x30" alt="PBS"></div>
+          <div class="col-sm-3"><img src="http://placehold.it/70x30" alt="Amazon"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="http://placehold.it/40x27" alt="Forever Young by Nicholas Perricone">
+            <p>
+              <strong><em>Forever Young</em></strong><br>
+              book by<br>
+              <strong>Nicholas Perricone</strong>
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <img src="http://placehold.it/40x27" alt="Your Bones by Lara Pizzorno">
+            <p>
+              <strong><em>Your Bones</em></strong><br>
+              book by<br>
+              <strong>Lara Pizzorno</strong>
+            </p>
+          </div>
+        </div>
+      </section><!-- End As Seen On -->
+
+      <!-- References -->
+      <section id="references" class="container-fluid">
+        <h1>Scientific References</h1>
+        <ol>
+          <li>
+            Marques A, Ferreira RJ, Santos E, et al. The accuracy of osteoporotic
+            fracture risk prediction tools: a systematic review and meta-analysis.
+            Ann Rheum Dis. 2015 Nov;74(11):1958-67. doi:10.1136/annrheumdis-2015-
+            207907. Epub 2015 Aug 6. PMID: 26248637,
+          </li>
+          <li>
+            Riggs BL, Melton LJ 3rd. The worldwide problem of osteoporosis: insights
+            afforded by epidemiology. Bone. 1995 Nov;17(5 Suppl):505S-511S. PMID:
+            8573428
+          </li>
+          <li>
+            https://www.algaecal.com/exper-insights/prescription-drugs-that-cause-osteoporosis/
+          </li>
+        </ol>
+      </section><!-- End References -->
+
+      <!-- Buy Now -->
+      <section class="container-fluid">
+        <a href="#bundles" class="add-to-cart">Buy Now</a>
+      </section><!-- End Buy Now -->
+
+      <footer class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 col-sm-12">
+            <a href="/">
+              <img src="img/logo-algaecal.jpg" alt="AlgaeCal">
+            </a>
+          </div>
+          <div class="col-md-10 col-sm-12">
+            <ul>
+              <li><a href="#">Shipping & Returns</a></li>
+              <li><a href="#">Health Disclaimer</a></li>
+              <li><a href="#">Legal and Privacy Policy</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Order Now</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-12">Copyright &copy; 2017 AlgaeCal</div>
+        </div>
       </footer>
-    </div> <!-- /container -->
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="js/main.js"></script>
     </body>
 </html>
