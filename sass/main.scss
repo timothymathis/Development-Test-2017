@@ -9,6 +9,7 @@ $dark-blue: #008ba4;
 $orange: #e87b15;
 $green: #38a33f;
 $dark-green: #25875b;
+$extra-dark-green: #4c813d;
 $box-shadow-color: #a5a5a5;
 $bold: 800;
 $semi-bold: 500;
@@ -41,7 +42,12 @@ body {
 
   a {
     color: #000;
-    font-weight: 800;
+    font-size: 21px;
+    font-weight: $bold;
+
+    &:hover {
+      text-decoration: none;
+    }
 
     span {
         color: $blue;
@@ -50,13 +56,27 @@ body {
   }
 
   p {
+      font-size: 16px;
       font-weight: 100;
+
+      span {
+        @include rounded(100%);
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 22px;
+        color: #fff;
+        font-size: 14px;
+        background-color: #41ad49;
+
+      }
   }
 
 }
 
 #introducing {
-    background: $green top left repeat-x url("#{$image-path}/bg-green-leaves.jpg");
+    background: $extra-dark-green top left repeat-x url("#{$image-path}/bg-green-leaves.jpg");
     color: #fff;
     text-align: center;
 
@@ -213,51 +233,6 @@ body {
       font-size: 19px;
     }
 
-    .add-to-cart {
-      @include rounded(7px);
-      @include box-shadow(0, 6px, 0, $dark-green);
-      display: inline-block;
-      position: relative;
-      background-color: $green;
-      border-bottom: 1px solid #46ab47;
-      padding: 4px 30px 0 30px;
-      margin-top: 9px;
-      margin-left: 30px;
-      color: #fff;
-      font-weight: $bold;
-      font-size: 18px;
-      letter-spacing: 1px;
-      line-height: 36px;
-
-      &:hover {
-        text-decoration: none;
-      }
-
-      .fa {
-        margin-left: 10px;
-        font-size: 16px;
-      }
-
-      &:before {
-        content: " ";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: -53px;
-        width: 76px;
-        height: 76px;
-        margin-top: -16px;
-        background: transparent center center no-repeat url("#{$image-path}/7-year-guarantee-add-to-cart.png");
-      }
-
-      &:after {
-        content: " ";
-        display: block;
-        clear: both;
-      }
-
-    }
-
     .discount {
       @include rounded(100%);
       @include box-shadow(0, 0, 7px, $box-shadow-color);
@@ -281,6 +256,45 @@ body {
 
     }
 
+  }
+
+}
+
+.add-to-cart {
+  @include rounded(7px);
+  @include box-shadow(0, 6px, 0, $dark-green);
+  display: inline-block;
+  position: relative;
+  background-color: $green;
+  border-bottom: 1px solid #46ab47;
+  padding: 4px 30px 0 30px;
+  margin-top: 9px;
+  margin-left: 30px;
+  color: #fff;
+  font-weight: $bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 36px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  .fa {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  &:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -53px;
+    width: 76px;
+    height: 76px;
+    margin-top: -16px;
+    background: transparent center center no-repeat url("#{$image-path}/7-year-guarantee-add-to-cart.png");
   }
 
 }
@@ -361,9 +375,11 @@ body {
   margin-top: 20px;
 
   > div > div {
-    background: $green center center repeat url("#{$image-path}/bg-green-leaves.jpg");
+    background: $extra-dark-green center center repeat url("#{$image-path}/bg-green-leaves.jpg");
     text-align: center;
     padding: 18px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 
   > div > div > div {
@@ -379,7 +395,7 @@ body {
   }
 
   p {
-    text-align: left;    
+    text-align: left;
     font-size: 18px;
   }
 
@@ -397,6 +413,97 @@ body {
       padding: 18px;
       margin-top: 5px;
     }
+
+  }
+
+}
+
+#as-seen-on {
+  @include box-shadow(0, 0, 7px, $box-shadow-color);
+  padding: 0;
+  margin: 36px 15px 0 15px;
+
+  > h1 {
+    display: block;
+    background-color: $extra-dark-green;
+    color: #fff;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+    padding: 0;
+    margin: 0 0 18px 0;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  img {
+    display: inline-block;
+    margin: 0 auto;
+
+    &.book {
+      float: left;
+      margin: 25px 12px 0 12px;
+    }
+  }
+
+  p {
+    float: left;
+    text-align: left;
+    margin-top: 25px;
+  }
+
+}
+
+#references {
+
+  h1 {
+    color: $dark-blue;
+    font-size: 25px;
+    font-weight: $bold;
+    text-align: center;
+  }
+
+  li {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+}
+
+#buy-now {
+  text-align: center;
+  margin-top: 45px;
+
+  .buy-now {
+    @extend .add-to-cart;
+  }
+
+}
+
+footer {
+  margin-top: 36px;
+  text-align: center;
+
+  .list-inline > li {
+    color: #616161;
+    font-size: 18px;
+    padding-right: 0;
+
+    a {
+      color: #757575;
+    }
+
+    &:before {
+      content: "|";
+      padding-right: 5px;
+    }
+
+    &:first-child:before {
+      content: "";
+    }
+
   }
 
 }

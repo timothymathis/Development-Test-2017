@@ -27,7 +27,10 @@
             <a href="tel:{{ PhoneNumber }}">
               Tap to Talk <span>{{ PhoneNumber }}</span>
             </a>
-            <p>Speak to our Bone Health Specialists</p>
+            <p>
+              <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+              Speak to our Bone Health Specialists
+            </p>
           </div>
         </div>
       </header>
@@ -49,7 +52,11 @@
       <!-- Video -->
       <section id="video" class="container-fluid">
         <h1>Build <strong>brand new bone</strong> WITHIN 6 MONTHS with this <strong>rare algae</strong> calcium ...even if you're 85!</h1>
-        <img src="http://placehold.it/342x190">
+        <div id="video-container">
+          <script src="//fast.wistia.com/embed/medias/cecdwaq3dz.jsonp" async></script>
+          <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+          <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_cecdwaq3dz videoFoam=true " style="height:100%;width:100%">&nbsp;</div></div></div>
+        </div>
       </section><!-- End Video -->
 
       <!-- Bundles -->
@@ -200,7 +207,7 @@
       </section><!-- End Supplement Facts -->
 
       <!-- Guarantee -->
-      <section id="guarantee" class="container-fluid">
+      <section id="guarantee" class="container">
         <div class="row">
           <div class="col-sm-12">
             <div>
@@ -214,7 +221,7 @@
                 scans. This guarantee extends to every scan you have for the next 7
                 years! Also, if you are unsatisfied at any time you can return my
                 product for a full refund, no questions asked!
-                <a href="#">Click Here for Details</a>
+                <a href="#"  data-toggle="modal" data-target="#guaranteeLongForm">Click Here for Details</a>
               </p>
               <aside>
                 <img src="img/dean-neuls-picture.png" alt="Dean Neuls">
@@ -225,31 +232,44 @@
                   AlgaeCal Inc.
                 </p>
               </aside>
+              <div class="modal fade" id="guaranteeLongForm" tabindex="-1" role="dialog" aria-labelledby="guaranteeLongFormLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="guaranteeLongFormLabel">Strong Bones for 7 Years Guarantee</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section><!-- End Guarantee -->
 
       <!-- As Seen On -->
-      <section id="as-seen-on" class="container-fluid">
+      <section id="as-seen-on" class="container">
         <h1>As Seen On:</h1>
         <div class="row">
-          <div class="col-sm-3"><img src="http://placehold.it/50x30" alt="The Dr. Oz Show"></div>
-          <div class="col-sm-3"><img src="http://placehold.it/40x30" alt="Fox News Channel"></div>
-          <div class="col-sm-3"><img src="http://placehold.it/60x30" alt="PBS"></div>
-          <div class="col-sm-3"><img src="http://placehold.it/70x30" alt="Amazon"></div>
+          <div class="col-xs-3"><img src="img/the-dr-oz-show.png" alt="The Dr. Oz Show"></div>
+          <div class="col-xs-2"><img src="img/fox-news-channel.png" alt="Fox News Channel"></div>
+          <div class="col-xs-3"><img src="img/pbs.png" alt="PBS"></div>
+          <div class="col-xs-4"><img src="img/amazon.png" alt="Amazon"></div>
         </div>
         <div class="row">
-          <div class="col-sm-6">
-            <img src="http://placehold.it/40x27" alt="Forever Young by Nicholas Perricone">
+          <div class="col-xs-6">
+            <img class="book" src="img/forever-young-nicholas-perricone.png" alt="Forever Young by Nicholas Perricone">
             <p>
               <strong><em>Forever Young</em></strong><br>
               book by<br>
               <strong>Nicholas Perricone</strong>
             </p>
           </div>
-          <div class="col-sm-6">
-            <img src="http://placehold.it/40x27" alt="Your Bones by Lara Pizzorno">
+          <div class="col-xs-6">
+            <img class="book" src="img/your-bones-lara-pizzorno.png" alt="Your Bones by Lara Pizzorno">
             <p>
               <strong><em>Your Bones</em></strong><br>
               book by<br>
@@ -260,7 +280,7 @@
       </section><!-- End As Seen On -->
 
       <!-- References -->
-      <section id="references" class="container-fluid">
+      <section id="references" class="container"-fluid"">
         <h1>Scientific References</h1>
         <ol>
           <li>
@@ -281,8 +301,8 @@
       </section><!-- End References -->
 
       <!-- Buy Now -->
-      <section class="container-fluid">
-        <a href="#bundles" class="add-to-cart">Buy Now</a>
+      <section id="buy-now" class="container">
+        <a href="#bundles" class="buy-now">Buy Now<i class="fa fa-play" aria-hidden="true"></i></a>
       </section><!-- End Buy Now -->
 
       <footer class="container-fluid">
@@ -293,7 +313,7 @@
             </a>
           </div>
           <div class="col-md-10 col-sm-12">
-            <ul>
+            <ul class="list-inline">
               <li><a href="#">Shipping & Returns</a></li>
               <li><a href="#">Health Disclaimer</a></li>
               <li><a href="#">Legal and Privacy Policy</a></li>
