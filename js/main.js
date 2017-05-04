@@ -5,7 +5,7 @@ $(document).ready(function(){
 
     // Update the phone number CTA with the office number
     var phoneNumber = data.acf.default_phone_number;
-    $("#tap-to-talk>a>span").html(phoneNumber.replace(/\./g,"-"));
+    $("#tap-to-talk #phone-number").html(phoneNumber.replace(/\./g,"-"));
     $("#tap-to-talk>a").attr("href", "tel:"+phoneNumber.replace(/\./g,""));
 
     // Populate the "7 Years Strong Bone Guarantee" modal

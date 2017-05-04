@@ -5,9 +5,9 @@
 $image-path: "../img";
 
 // Breakpoints (based on Bootstrap 3)
-$small-devices = 768px;
-$medium-devices = 992px;
-$large-devices = 1200px;
+$small-devices: 768px;
+$medium-devices: 992px;
+$large-devices: 1200px;
 
 // Colors used in design
 $blue: #54b8cd;
@@ -39,33 +39,54 @@ body {
 }
 
 #logo {
+  margin-top: 1px;
+  padding-left: 30px;
 
   img {
     margin-top: 25px;
-    margin-bottom: 12px;
+    margin-bottom: 7px;
   }
 
 }
 
 #tap-to-talk {
   display: none;
+  padding-left: 30px;
 
   a {
     color: #000;
-    font-size: 21px;
+    font-size: 22px;
     font-weight: $bold;
 
     &:hover {
       text-decoration: none;
     }
 
-    span {
+    .call {
+      display: none;
+
+      @media screen and (min-width: $small-devices) {
+         display: inline;
+       }
+
+    }
+
+    .tap {
+      @media screen and (min-width: $small-devices) {
+         display: none;
+       }
+
+    }
+
+    #phone-number {
         color: $blue;
     }
 
   }
 
   p {
+      padding-left: 2px;
+      margin-bottom: 6px;
       font-size: 16px;
       font-weight: 100;
 
@@ -95,10 +116,10 @@ body {
        position: relative;
        font-size: 30px;
        font-weight: 800;
-       letter-spacing: 3px;
+       letter-spacing: 2px;
        text-transform: uppercase;
        text-align: center;
-       margin-top: 33px;
+       margin-top: 27px;
        margin-bottom: 12px;
        text-align: center;
 
@@ -106,9 +127,9 @@ body {
            content: " ";
            display: block;
            position: absolute;
-           top: 50%;
-           left: -75px;
-           width: 68px;
+           top: 43%;
+           left: -72px;
+           width: 67px;
            height: 2px;
            background-color: #fff;
        }
@@ -117,9 +138,9 @@ body {
            content: " ";
            display: block;
            position: absolute;
-           top: 50%;
-           right: -75px;
-           width: 68px;
+           top: 43%;
+           right: -72px;
+           width: 67px;
            height: 2px;
            background-color: #fff;
        }
@@ -129,10 +150,15 @@ body {
    h2 {
        font-size: 32px;
        font-weight: 800;
-       line-height: 40px;
+       line-height: 43px;
        text-align: left;
-       margin-top: 12px;
-       margin-bottom: 24px;
+       margin-top: 2px;
+       margin-bottom: 12px;
+       margin-left: 15px;
+
+       @media screen and (min-width: $small-devices) {
+          text-align: center;
+        }
 
        em {
          font-size: 40px;
@@ -152,8 +178,9 @@ body {
 #video {
 
   h1 {
-    font-size: 21px;
-    margin-top: 12px;
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 19px;
     margin-bottom: 15px;
   }
 
@@ -163,114 +190,132 @@ body {
   display: none;
 
   .bundle {
-    margin: 30px 30px 0 30px;
+    @media screen and (max-width: $small-devices) {
+       padding: 0 57px 30px 42px;
+     }
 
     &.most-popular {
-      @include box-shadow(0, 0, 7px, $box-shadow-color);
-      background-color: $dark-blue;
-      padding: 7px 0 15px 0;
+      padding-left: 32px;
+      padding-right: 48px;
 
-      &:before {
-        content: "Most Popular";
-        display: block;
-        color: #fff;
-        font-size: 15px;
-        font-weight: $bold;
-        text-transform: uppercase;
-        text-align: center;
-        letter-spacing: 2px;
+      >.bundle-content {
+        @include box-shadow(0, 0, 10px, $box-shadow-color);
+        background-color: $dark-blue;
+        padding: 4px 0 15px 0;
+
+        &:before {
+          content: "Most Popular";
+          display: block;
+          color: #fff;
+          font-size: 14px;
+          font-weight: $bold;
+          text-transform: uppercase;
+          text-align: center;
+          letter-spacing: 2px;
+        }
+
+        > div {
+          @include box-shadow(0, 0, 10px, #007084);
+          margin: 2px 10px 0 10px;
+
+          .discount {
+            top: -40px;
+            right: -38px;
+          }
+
+        }
       }
+    }
+
+    .bundle-content {
 
       > div {
-        @include box-shadow(0, 0, 7px, #007084);
-        margin: 7px 15px 0 15px;
-      }
-
-    }
-
-    > div {
-      @include box-shadow(0, 0, 7px, $box-shadow-color);
-      background-color: #fff;
-      text-align: center;
-      padding-top: 15px;
-      padding-bottom: 35px;
-    }
-
-    h1 {
-        font-size: 25px;
-        font-weight: 800;
-        margin-top: 12px;
-        margin-bottom: 5px;
-    }
-
-    h2 {
-        color: $dark-blue;
-        font-size: 19px;
-        font-weight: 100;
-        line-height: 22px;
-        margin-top: 0;
-    }
-
-    img {
-        display: block;
-        margin: 30px auto 12px auto;
-    }
-
-    .price {
-        display: inline-block;
+        @include box-shadow(0, 0, 10px, $box-shadow-color);
         position: relative;
-        clear: both;
-        font-size: 30px;
-        font-weight: 800;
+        background-color: #fff;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 35px;
 
-        sup {
-          font-size: 19px;
+        h1 {
+            font-size: 25px;
+            font-weight: 800;
+            margin-top: 12px;
+            margin-bottom: 5px;
         }
 
-        &:after {
-            content: "USD";
+        h2 {
+            color: $dark-blue;
+            font-size: 19px;
+            font-weight: 100;
+            line-height: 22px;
+            margin-top: 0;
+        }
+
+        img {
             display: block;
-            position: absolute;
-            top: 50%;
-            right: -30px;
-            margin-top: -10%;
-            font-size: 12px;
-            text-decoration: underline;
+            margin: 30px auto 12px auto;
         }
 
-    }
+        .price {
+            display: inline-block;
+            position: relative;
+            clear: both;
+            font-size: 30px;
+            font-weight: 800;
 
-    .daily-rate {
-      background: transparent center center no-repeat url("#{$image-path}/bg-highlight.png");
-      font-size: 19px;
-    }
+            sup {
+              font-size: 19px;
+            }
 
-    .discount {
-      @include rounded(100%);
-      @include box-shadow(0, 0, 7px, $box-shadow-color);
-      position: absolute;
-      top: -12px;
-      right: -25px;
-      width: 70px;
-      height: 70px;
-      color: #fff;
-      font-size: 15px;
-      font-weight: $bold;
-      line-height: 20px;
-      text-transform: uppercase;
-      background-color: $orange;
-      padding-top: 17px;
+            &:after {
+                content: "USD";
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: -30px;
+                margin-top: -10%;
+                font-size: 12px;
+                text-decoration: underline;
+            }
 
-      em {
-        font-size: 22px;
-        font-style: normal;
+          }
+
+          .daily-rate {
+            background: transparent center center no-repeat url("#{$image-path}/bg-highlight.png");
+            font-size: 19px;
+          }
+
+          .discount {
+            @include rounded(100%);
+            @include box-shadow(0, 0, 10px, $box-shadow-color);
+            position: absolute;
+            top: -30px;
+            right: -36px;
+            width: 70px;
+            height: 70px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: $bold;
+            line-height: 20px;
+            text-transform: uppercase;
+            background-color: $orange;
+            padding-top: 17px;
+
+            em {
+              font-size: 22px;
+              font-style: normal;
+            }
+
+          }
+
+        }
+
       }
 
     }
 
   }
-
-}
 
 .add-to-cart {
   @include rounded(7px);
@@ -389,7 +434,7 @@ body {
   > div > div {
     background: $extra-dark-green center center repeat url("#{$image-path}/bg-green-leaves.jpg");
     text-align: center;
-    padding: 18px;
+    padding: 21px;
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -400,9 +445,10 @@ body {
   }
 
   h1 {
+    margin-top: 36px;
     text-align: left;
     color: #e47832;
-    font-size: 28px;
+    font-size: 29px;
     font-weight: $bold;
   }
 
@@ -413,7 +459,7 @@ body {
 
   aside {
     text-align: center;
-    margin: 50px;
+    margin: 0px 30px;
 
     img {
       display: block;
@@ -423,7 +469,7 @@ body {
     p {
       border-top: 2px solid #000;
       padding: 18px;
-      margin-top: 5px;
+      margin-top: 2px;
     }
 
   }
@@ -431,7 +477,7 @@ body {
 }
 
 #as-seen-on {
-  @include box-shadow(0, 0, 7px, $box-shadow-color);
+  @include box-shadow(0, 0, 10px, $box-shadow-color);
   padding: 0;
   margin: 36px 15px 0 15px;
 
@@ -462,8 +508,9 @@ body {
 
   p {
     float: left;
-    text-align: left;
     margin-top: 25px;
+    text-align: left;
+    font-size: 12px;
   }
 
 }
@@ -472,31 +519,59 @@ body {
 
   h1 {
     color: $dark-blue;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: $bold;
     text-align: center;
   }
 
-  li {
-    font-size: 18px;
-    line-height: 26px;
+  ol{
+    padding-right: 73px;
+    padding-left: 83px;
+
+    li {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
   }
 
 }
 
 #buy-now {
-  text-align: center;
   margin-top: 45px;
+  text-align: center;
+
 
   .buy-now {
     @extend .add-to-cart;
+    @include box-shadow(0, 8px, 0, $dark-green);
+    padding: 8px 60px 8px 100px;
+    font-size: 22px;
+
+    &:before {
+      left: -31px;
+      width: 100px;
+      height: 100px;
+      background-image: url("#{$image-path}/7-year-guarantee-buy-now.png");
+    }
+
+    .fa {
+      font-size: 22px;
+    }
+
   }
 
 }
 
 footer {
-  margin-top: 36px;
+  padding-bottom: 50px;
+  margin-top: 50px;
   text-align: center;
+  font-size: 18px;
+
+  img {
+    margin-bottom: 13px;
+  }
 
   .list-inline > li {
     color: #616161;

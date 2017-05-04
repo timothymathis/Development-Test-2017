@@ -7,21 +7,35 @@ body {
     color: #1b97ae;
     text-decoration: underline; }
 
-#logo img {
-  margin-top: 25px;
-  margin-bottom: 12px; }
+#logo {
+  margin-top: 1px;
+  padding-left: 30px; }
+  #logo img {
+    margin-top: 25px;
+    margin-bottom: 7px; }
 
 #tap-to-talk {
-  display: none; }
+  display: none;
+  padding-left: 30px; }
   #tap-to-talk a {
     color: #000;
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 800; }
     #tap-to-talk a:hover {
       text-decoration: none; }
-    #tap-to-talk a span {
+    #tap-to-talk a .call {
+      display: none; }
+      @media screen and (min-width: 768px) {
+        #tap-to-talk a .call {
+          display: inline; } }
+    @media screen and (min-width: 768px) {
+      #tap-to-talk a .tap {
+        display: none; } }
+    #tap-to-talk a #phone-number {
       color: #54b8cd; }
   #tap-to-talk p {
+    padding-left: 2px;
+    margin-bottom: 6px;
     font-size: 16px;
     font-weight: 100; }
     #tap-to-talk p span {
@@ -46,39 +60,42 @@ body {
     position: relative;
     font-size: 30px;
     font-weight: 800;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     text-align: center;
-    margin-top: 33px;
+    margin-top: 27px;
     margin-bottom: 12px;
     text-align: center; }
     #introducing h1:before {
       content: " ";
       display: block;
       position: absolute;
-      top: 50%;
-      left: -75px;
-      width: 68px;
+      top: 43%;
+      left: -72px;
+      width: 67px;
       height: 2px;
       background-color: #fff; }
     #introducing h1:after {
       content: " ";
       display: block;
       position: absolute;
-      top: 50%;
-      right: -75px;
-      width: 68px;
+      top: 43%;
+      right: -72px;
+      width: 67px;
       height: 2px;
       background-color: #fff; }
   #introducing h2 {
     font-size: 32px;
     font-weight: 800;
-    line-height: 40px;
+    line-height: 43px;
     text-align: left;
-    margin-top: 12px;
-    margin-bottom: 24px; }
+    margin-top: 2px;
+    margin-bottom: 12px;
+    margin-left: 15px; }
+    @media screen and (min-width: 768px) {
+      #introducing h2 {
+        text-align: center; } }
     #introducing h2 em {
-      display: block;
       font-size: 40px;
       font-style: normal;
       background: transparent bottom left no-repeat url("../img/bg-underline.png");
@@ -87,65 +104,74 @@ body {
       font-size: 25px; }
 
 #video h1 {
-  font-size: 21px;
-  margin-top: 12px;
+  font-size: 20px;
+  line-height: 25px;
+  margin-top: 19px;
   margin-bottom: 15px; }
 
 #bundles {
   display: none; }
-  #bundles .bundle {
-    margin: 30px 30px 0 30px; }
-    #bundles .bundle.most-popular {
-      -webkit-box-shadow: 0 0 7px #a5a5a5;
-      -moz-box-shadow: 0 0 7px #a5a5a5;
-      box-shadow: 0 0 7px #a5a5a5;
+  @media screen and (max-width: 768px) {
+    #bundles .bundle {
+      padding: 0 57px 30px 42px; } }
+  #bundles .bundle.most-popular {
+    padding-left: 32px;
+    padding-right: 48px; }
+    #bundles .bundle.most-popular > .bundle-content {
+      -webkit-box-shadow: 0 0 10px #a5a5a5;
+      -moz-box-shadow: 0 0 10px #a5a5a5;
+      box-shadow: 0 0 10px #a5a5a5;
       background-color: #008ba4;
-      padding: 7px 0 15px 0; }
-      #bundles .bundle.most-popular:before {
+      padding: 4px 0 15px 0; }
+      #bundles .bundle.most-popular > .bundle-content:before {
         content: "Most Popular";
         display: block;
         color: #fff;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 800;
         text-transform: uppercase;
         text-align: center;
         letter-spacing: 2px; }
-      #bundles .bundle.most-popular > div {
-        -webkit-box-shadow: 0 0 7px #007084;
-        -moz-box-shadow: 0 0 7px #007084;
-        box-shadow: 0 0 7px #007084;
-        margin: 7px 15px 0 15px; }
-    #bundles .bundle > div {
-      -webkit-box-shadow: 0 0 7px #a5a5a5;
-      -moz-box-shadow: 0 0 7px #a5a5a5;
-      box-shadow: 0 0 7px #a5a5a5;
-      background-color: #fff;
-      text-align: center;
-      padding-top: 15px;
-      padding-bottom: 35px; }
-    #bundles .bundle h1 {
+      #bundles .bundle.most-popular > .bundle-content > div {
+        -webkit-box-shadow: 0 0 10px #007084;
+        -moz-box-shadow: 0 0 10px #007084;
+        box-shadow: 0 0 10px #007084;
+        margin: 2px 10px 0 10px; }
+        #bundles .bundle.most-popular > .bundle-content > div .discount {
+          top: -40px;
+          right: -38px; }
+  #bundles .bundle .bundle-content > div {
+    -webkit-box-shadow: 0 0 10px #a5a5a5;
+    -moz-box-shadow: 0 0 10px #a5a5a5;
+    box-shadow: 0 0 10px #a5a5a5;
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 35px; }
+    #bundles .bundle .bundle-content > div h1 {
       font-size: 25px;
       font-weight: 800;
       margin-top: 12px;
       margin-bottom: 5px; }
-    #bundles .bundle h2 {
+    #bundles .bundle .bundle-content > div h2 {
       color: #008ba4;
       font-size: 19px;
       font-weight: 100;
       line-height: 22px;
       margin-top: 0; }
-    #bundles .bundle img {
+    #bundles .bundle .bundle-content > div img {
       display: block;
       margin: 30px auto 12px auto; }
-    #bundles .bundle .price {
+    #bundles .bundle .bundle-content > div .price {
       display: inline-block;
       position: relative;
       clear: both;
       font-size: 30px;
       font-weight: 800; }
-      #bundles .bundle .price sup {
+      #bundles .bundle .bundle-content > div .price sup {
         font-size: 19px; }
-      #bundles .bundle .price:after {
+      #bundles .bundle .bundle-content > div .price:after {
         content: "USD";
         display: block;
         position: absolute;
@@ -154,19 +180,19 @@ body {
         margin-top: -10%;
         font-size: 12px;
         text-decoration: underline; }
-    #bundles .bundle .daily-rate {
+    #bundles .bundle .bundle-content > div .daily-rate {
       background: transparent center center no-repeat url("../img/bg-highlight.png");
       font-size: 19px; }
-    #bundles .bundle .discount {
+    #bundles .bundle .bundle-content > div .discount {
       -webkit-border-radius: 100%;
       -moz-border-radius: 100%;
       border-radius: 100%;
-      -webkit-box-shadow: 0 0 7px #a5a5a5;
-      -moz-box-shadow: 0 0 7px #a5a5a5;
-      box-shadow: 0 0 7px #a5a5a5;
+      -webkit-box-shadow: 0 0 10px #a5a5a5;
+      -moz-box-shadow: 0 0 10px #a5a5a5;
+      box-shadow: 0 0 10px #a5a5a5;
       position: absolute;
-      top: -12px;
-      right: -25px;
+      top: -30px;
+      right: -36px;
       width: 70px;
       height: 70px;
       color: #fff;
@@ -176,7 +202,7 @@ body {
       text-transform: uppercase;
       background-color: #e87b15;
       padding-top: 17px; }
-      #bundles .bundle .discount em {
+      #bundles .bundle .bundle-content > div .discount em {
         font-size: 22px;
         font-style: normal; }
 
@@ -261,35 +287,36 @@ body {
   #guarantee > div > div {
     background: #4c813d center center repeat url("../img/bg-green-leaves.jpg");
     text-align: center;
-    padding: 18px;
+    padding: 21px;
     margin-left: 15px;
     margin-right: 15px; }
   #guarantee > div > div > div {
     background-color: #fff;
     padding: 18px; }
   #guarantee h1 {
+    margin-top: 36px;
     text-align: left;
     color: #e47832;
-    font-size: 28px;
+    font-size: 29px;
     font-weight: 800; }
   #guarantee p {
     text-align: left;
     font-size: 18px; }
   #guarantee aside {
     text-align: center;
-    margin: 50px; }
+    margin: 0px 30px; }
     #guarantee aside img {
       display: block;
       margin: 0 auto; }
     #guarantee aside p {
       border-top: 2px solid #000;
       padding: 18px;
-      margin-top: 5px; }
+      margin-top: 2px; }
 
 #as-seen-on {
-  -webkit-box-shadow: 0 0 7px #a5a5a5;
-  -moz-box-shadow: 0 0 7px #a5a5a5;
-  box-shadow: 0 0 7px #a5a5a5;
+  -webkit-box-shadow: 0 0 10px #a5a5a5;
+  -moz-box-shadow: 0 0 10px #a5a5a5;
+  box-shadow: 0 0 10px #a5a5a5;
   padding: 0;
   margin: 36px 15px 0 15px; }
   #as-seen-on > h1 {
@@ -311,26 +338,47 @@ body {
       margin: 25px 12px 0 12px; }
   #as-seen-on p {
     float: left;
+    margin-top: 25px;
     text-align: left;
-    margin-top: 25px; }
+    font-size: 12px; }
 
 #references h1 {
   color: #008ba4;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 800;
   text-align: center; }
 
-#references li {
-  font-size: 18px;
-  line-height: 26px; }
+#references ol {
+  padding-right: 73px;
+  padding-left: 83px; }
+  #references ol li {
+    font-size: 18px;
+    line-height: 24px; }
 
 #buy-now {
-  text-align: center;
-  margin-top: 45px; }
+  margin-top: 45px;
+  text-align: center; }
+  #buy-now .buy-now {
+    -webkit-box-shadow: 0 8px 0 #25875b;
+    -moz-box-shadow: 0 8px 0 #25875b;
+    box-shadow: 0 8px 0 #25875b;
+    padding: 8px 60px 8px 100px;
+    font-size: 22px; }
+    #buy-now .buy-now:before {
+      left: -31px;
+      width: 100px;
+      height: 100px;
+      background-image: url("../img/7-year-guarantee-buy-now.png"); }
+    #buy-now .buy-now .fa {
+      font-size: 22px; }
 
 footer {
-  margin-top: 36px;
-  text-align: center; }
+  padding-bottom: 50px;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 18px; }
+  footer img {
+    margin-bottom: 13px; }
   footer .list-inline > li {
     color: #616161;
     font-size: 18px;

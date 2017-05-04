@@ -18,14 +18,16 @@
     <body>
       <header class="container-fluid">
         <div class="row">
-          <div id="logo" class="col-md-2 col-sm-12">
+          <div id="logo" class="col-sm-3 col-xs-12">
             <a href="/">
               <img src="img/logo-algaecal.jpg" alt="AlgaeCal">
             </a>
           </div>
-          <div id="tap-to-talk" class="col-md-3 col-md-offset-7 col-sm-12">
+          <div id="tap-to-talk" class="col-lg-4 col-lg-offset-5 col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
             <a href="">
-              Tap to Talk <span></span>
+              <span class="tap">Tap to Talk</span>
+              <span class="call">Call</span>
+              <span id="phone-number"></span>
             </a>
             <p>
               <span><i class="fa fa-phone" aria-hidden="true"></i></span>
@@ -41,8 +43,8 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-sm-12">
             <h2>
-              The ONLY Calcium Supplement that
-              <em>Increases Bone Density<sup>*</sup></em>
+              The ONLY Calcium Supplement that <br>
+              <em>Increases Bone Density<sup>*</sup></em><br>
               ...or Your Money Back
             </h2>
           </div>
@@ -52,7 +54,7 @@
       <!-- Video -->
       <section id="video" class="container-fluid">
         <h1>Build <strong>brand new bone</strong> WITHIN 6 MONTHS with this <strong>rare algae</strong> calcium ...even if you're 85!</h1>
-        <div id="video-container">
+        <!--<div id="video-container">
           <script>
             window._wq = window._wq || [];
             _wq.push({
@@ -70,53 +72,59 @@
           <script src="//fast.wistia.com/embed/medias/cecdwaq3dz.jsonp" async></script>
           <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
           <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_cecdwaq3dz videoFoam=true " style="height:100%;width:100%">&nbsp;</div></div></div>
-        </div>
+        </div>-->
       </section><!-- End Video -->
 
       <!-- Bundles -->
       <a name="bundles"></a>
-      <section id="bundles" class="container-fluid">
+      <section style="display:block" id="bundles" class="container">
         <div class="row">
-          <div class="bundle col-md-4 col-sm-12">
-            <div>
-              <h1>3 Month Supply</h1>
-              <h2>
-                4 AlgaeCal Plus <br>
-                3 Strontium Boost
-              </h2>
-              <img src="img/algaecal-plus-strontium-boost-3-month-supply.png" alt="3 Month Supply - 4 AlgaeCal Plus 3 Strontium Boost">
-              <div class="price"><sup>$</sup>233</div>
-              <div class="daily-rate">Only <strong>$2.58</strong>/Day!</div>
-              <a class="add-to-cart" href="https://www.algaecal.com/product/bone-builder-packs/">Add to Cart<i class="fa fa-play" aria-hidden="true"></i></a>
-              <div class="discount"><em>20%</em> off</div>
+          <div class="bundle col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="bundle-content">
+              <div>
+                <h1>3 Month Supply</h1>
+                <h2>
+                  4 AlgaeCal Plus <br>
+                  3 Strontium Boost
+                </h2>
+                <img class="img-responsive" src="img/algaecal-plus-strontium-boost-3-month-supply.png" alt="3 Month Supply - 4 AlgaeCal Plus 3 Strontium Boost">
+                <div class="price"><sup>$</sup>233</div>
+                <div class="daily-rate">Only <strong>$2.58</strong>/Day!</div>
+                <a class="add-to-cart" href="https://www.algaecal.com/product/bone-builder-packs/">Add to Cart<i class="fa fa-play" aria-hidden="true"></i></a>
+                <div class="discount"><em>20%</em> off</div>
+              </div>
             </div>
           </div>
-          <div class="most-popular bundle col-md-4 col-sm-12">
-            <div>
-              <h1>6 Month Supply</h1>
-              <h2>
-                8 AlgaeCal Plus <br>
-                6 Strontium Boost
-              </h2>
-              <img src="img/algaecal-plus-strontium-boost-6-month-supply.png" alt="6 Month Supply - 8 AlgaeCal Plus 6 Strontium Boost">
-              <div class="price"><sup>$</sup>337</div>
-              <div class="daily-rate">Only <strong>$2.09</strong>/Day!</div>
-              <a class="add-to-cart" href="https://www.algaecal.com/product/bone-builder-packs/">Add to Cart<i class="fa fa-play" aria-hidden="true"></i></a>
-              <div class="discount"><em>35%</em> off</div>
+          <div class="bundle most-popular col-md-4 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="bundle-content">
+              <div>
+                <h1>6 Month Supply</h1>
+                <h2>
+                  8 AlgaeCal Plus <br>
+                  6 Strontium Boost
+                </h2>
+                <img class="img-responsive" src="img/algaecal-plus-strontium-boost-6-month-supply.png" alt="6 Month Supply - 8 AlgaeCal Plus 6 Strontium Boost">
+                <div class="price"><sup>$</sup>337</div>
+                <div class="daily-rate">Only <strong>$2.09</strong>/Day!</div>
+                <a class="add-to-cart" href="https://www.algaecal.com/product/bone-builder-packs/">Add to Cart<i class="fa fa-play" aria-hidden="true"></i></a>
+                <div class="discount"><em>35%</em> off</div>
+              </div>
             </div>
           </div>
-          <div class="bundle col-md-4 col-sm-12">
-            <div>
-              <h1>12 Month Suppy</h1>
-              <h2>
-                16 AlgaeCal Plus <br>
-                12 Strontium Boost
-              </h2>
-              <img src="img/algaecal-plus-strontium-boost-12-month-supply.png" alt="12 Month Supply - 16 AlgaeCal Plus 12 Strontium Boost">
-              <div class="price"><sup>$</sup>717</div>
-              <div class="daily-rate">Only <strong>$1.97</strong>/Day!</div>
-              <a class="add-to-cart" href="https://www.algaecal.com/product/bone-builder-packs/">Add to Cart<i class="fa fa-play" aria-hidden="true"></i></a>
-              <div class="discount"><em>38%</em> off</div>
+          <div class="bundle col-md-3 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="bundle-content">
+              <div>
+                <h1>12 Month Supply</h1>
+                <h2>
+                  16 AlgaeCal Plus <br>
+                  12 Strontium Boost
+                </h2>
+                <img class="img-responsive" src="img/algaecal-plus-strontium-boost-12-month-supply.png" alt="12 Month Supply - 16 AlgaeCal Plus 12 Strontium Boost">
+                <div class="price"><sup>$</sup>717</div>
+                <div class="daily-rate">Only <strong>$1.97</strong>/Day!</div>
+                <a class="add-to-cart" href="https://www.algaecal.com/product/bone-builder-packs/">Add to Cart<i class="fa fa-play" aria-hidden="true"></i></a>
+                <div class="discount"><em>38%</em> off</div>
+              </div>
             </div>
           </div>
         </div>
@@ -125,7 +133,7 @@
       <!-- Supplement Facts -->
       <section id="supplement-facts" class="container-fluid">
         <div class="row">
-          <div class="col-md-3 col-md-offset-2 col-sm-12">
+          <div class="col-sm-4 col-sm-offset-1 col-xs-12">
             <h1>AlgaeCal Plus</h1>
             <table>
               <thead>
@@ -190,7 +198,7 @@
               </tbody>
             </table>
           </div>
-          <div class="col-md-3 col-md-offset-2 col-sm-12">
+          <div class="col-sm-4 col-sm-offset-1 col-xs-12">
             <h1>Strontium Boost</h1>
             <table>
               <thead>
@@ -238,8 +246,8 @@
                 <a href="#"  data-toggle="modal" data-target="#guaranteeLongForm">Click Here for Details</a>
               </p>
               <aside>
-                <img src="img/dean-neuls-picture.png" alt="Dean Neuls">
-                <img src="img/dean-neuls-signature.jpg" alt="Dean Neuls' signature">
+                <img class="img-responsive" src="img/dean-neuls-picture.png" alt="Dean Neuls">
+                <img class="img-responsive" src="img/dean-neuls-signature.jpg" alt="Dean Neuls' signature">
                 <p>
                   <strong>Dean Neuls,</strong> <br>
                   CEO and Co-Founder, <br>
@@ -268,10 +276,10 @@
       <section id="as-seen-on" class="container">
         <h1>As Seen On:</h1>
         <div class="row">
-          <div class="col-xs-3"><img src="img/the-dr-oz-show.png" alt="The Dr. Oz Show"></div>
-          <div class="col-xs-2"><img src="img/fox-news-channel.png" alt="Fox News Channel"></div>
-          <div class="col-xs-3"><img src="img/pbs.png" alt="PBS"></div>
-          <div class="col-xs-4"><img src="img/amazon.png" alt="Amazon"></div>
+          <div class="col-xs-3"><img class="img-responsive" src="img/the-dr-oz-show.png" alt="The Dr. Oz Show"></div>
+          <div class="col-xs-2"><img class="img-responsive" src="img/fox-news-channel.png" alt="Fox News Channel"></div>
+          <div class="col-xs-3"><img class="img-responsive" src="img/pbs.png" alt="PBS"></div>
+          <div class="col-xs-4"><img class="img-responsive" src="img/amazon.png" alt="Amazon"></div>
         </div>
         <div class="row">
           <div class="col-xs-6">
