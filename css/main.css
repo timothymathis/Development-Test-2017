@@ -11,30 +11,31 @@ body {
   margin-top: 25px;
   margin-bottom: 12px; }
 
-#tap-to-talk a {
-  color: #000;
-  font-size: 21px;
-  font-weight: 800; }
-  #tap-to-talk a:hover {
-    text-decoration: none; }
-  #tap-to-talk a span {
-    color: #54b8cd; }
-
-#tap-to-talk p {
-  font-size: 16px;
-  font-weight: 100; }
-  #tap-to-talk p span {
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    line-height: 22px;
-    color: #fff;
-    font-size: 14px;
-    background-color: #41ad49; }
+#tap-to-talk {
+  display: none; }
+  #tap-to-talk a {
+    color: #000;
+    font-size: 21px;
+    font-weight: 800; }
+    #tap-to-talk a:hover {
+      text-decoration: none; }
+    #tap-to-talk a span {
+      color: #54b8cd; }
+  #tap-to-talk p {
+    font-size: 16px;
+    font-weight: 100; }
+    #tap-to-talk p span {
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      border-radius: 100%;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 22px;
+      color: #fff;
+      font-size: 14px;
+      background-color: #41ad49; }
 
 #introducing {
   background: #4c813d top left repeat-x url("../img/bg-green-leaves.jpg");
@@ -43,8 +44,9 @@ body {
   #introducing h1 {
     display: inline-block;
     position: relative;
-    font-size: 21px;
+    font-size: 30px;
     font-weight: 800;
+    letter-spacing: 3px;
     text-transform: uppercase;
     text-align: center;
     margin-top: 33px;
@@ -69,14 +71,15 @@ body {
       height: 2px;
       background-color: #fff; }
   #introducing h2 {
-    font-size: 25px;
+    font-size: 32px;
     font-weight: 800;
     line-height: 40px;
     text-align: left;
     margin-top: 12px;
     margin-bottom: 24px; }
     #introducing h2 em {
-      font-size: 32px;
+      display: block;
+      font-size: 40px;
       font-style: normal;
       background: transparent bottom left no-repeat url("../img/bg-underline.png");
       padding-bottom: 4px; }

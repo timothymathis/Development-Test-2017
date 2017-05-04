@@ -3,6 +3,13 @@
 @import "mixins";
 
 $image-path: "../img";
+
+// Breakpoints (based on Bootstrap 3)
+$small-devices = 768px;
+$medium-devices = 992px;
+$large-devices = 1200px;
+
+// Colors used in design
 $blue: #54b8cd;
 $light-blue: #1b97ae;
 $dark-blue: #008ba4;
@@ -11,6 +18,8 @@ $green: #38a33f;
 $dark-green: #25875b;
 $extra-dark-green: #4c813d;
 $box-shadow-color: #a5a5a5;
+
+// Font weights
 $bold: 800;
 $semi-bold: 500;
 $normal: 300;
@@ -39,6 +48,7 @@ body {
 }
 
 #tap-to-talk {
+  display: none;
 
   a {
     color: #000;
@@ -83,8 +93,9 @@ body {
     h1 {
        display: inline-block;
        position: relative;
-       font-size: 21px;
+       font-size: 30px;
        font-weight: 800;
+       letter-spacing: 3px;
        text-transform: uppercase;
        text-align: center;
        margin-top: 33px;
@@ -116,7 +127,7 @@ body {
    }
 
    h2 {
-       font-size: 25px;
+       font-size: 32px;
        font-weight: 800;
        line-height: 40px;
        text-align: left;
@@ -124,10 +135,10 @@ body {
        margin-bottom: 24px;
 
        em {
-           font-size: 32px;
-           font-style: normal;
-           background: transparent bottom left no-repeat url("#{$image-path}/bg-underline.png");
-           padding-bottom: 4px;
+         font-size: 40px;
+         font-style: normal;
+         background: transparent bottom left no-repeat url("#{$image-path}/bg-underline.png");
+         padding-bottom: 4px;
        }
 
        sup {
