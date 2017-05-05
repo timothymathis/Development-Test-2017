@@ -3,9 +3,16 @@ body {
   font-family: 'Glober', 'Roboto', sans-serif; }
   body strong {
     font-weight: 800; }
+  body a {
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s; }
   body p a {
     color: #1b97ae;
     text-decoration: underline; }
+  body .clear-left {
+    clear: left; }
 
 #logo {
   margin-top: 1px;
@@ -17,6 +24,9 @@ body {
 #tap-to-talk {
   display: none;
   padding-left: 30px; }
+  @media screen and (min-width: 768px) {
+    #tap-to-talk {
+      margin-top: 20px; } }
   #tap-to-talk a {
     color: #000;
     font-size: 22px;
@@ -53,8 +63,12 @@ body {
 
 #introducing {
   background: #4c813d top left repeat-x url("../img/bg-green-leaves.jpg");
+  background-size: 100%;
   color: #fff;
-  text-align: center; }
+  text-align: center;
+  -moz-box-shadow: inset 0 -10px 10px -10px rgba(255, 255, 255, 0.83);
+  -webkit-box-shadow: inset 0 -10px 10px -10px rgba(255, 255, 255, 0.83);
+  box-shadow: inset 0 -10px 10px -10px rgba(255, 255, 255, 0.83); }
   #introducing h1 {
     display: inline-block;
     position: relative;
@@ -108,22 +122,66 @@ body {
   line-height: 25px;
   margin-top: 19px;
   margin-bottom: 15px; }
+  @media screen and (min-width: 768px) {
+    #video h1 {
+      text-align: center; } }
+
+#video #video-container {
+  position: relative; }
+  @media screen and (min-width: 768px) {
+    #video #video-container {
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto; } }
+  #video #video-container #play-button-overlay {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer; }
+    #video #video-container #play-button-overlay #play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -52px;
+      margin-left: -63px; }
+    #video #video-container #play-button-overlay #tap-to-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: 35px; }
+      @media screen and (min-width: 768px) {
+        #video #video-container #play-button-overlay #tap-to-play {
+          display: none; } }
 
 #bundles {
-  display: none; }
-  @media screen and (max-width: 768px) {
+  display: none;
+  margin-top: 32px; }
+  @media screen and (min-width: 768px) {
+    #bundles {
+      margin-top: 52px; } }
+  @media screen and (max-width: 992px) {
     #bundles .bundle {
-      padding: 0 57px 30px 42px; } }
+      padding: 20px 57px 30px 42px; } }
+  @media screen and (min-width: 992px) {
+    #bundles .bundle {
+      padding: 0 22px; } }
   #bundles .bundle.most-popular {
     padding-left: 32px;
     padding-right: 48px; }
-    #bundles .bundle.most-popular > .bundle-content {
+    @media screen and (min-width: 992px) {
+      #bundles .bundle.most-popular {
+        padding: 0 18px; } }
+    #bundles .bundle.most-popular > .content {
       -webkit-box-shadow: 0 0 10px #a5a5a5;
       -moz-box-shadow: 0 0 10px #a5a5a5;
       box-shadow: 0 0 10px #a5a5a5;
       background-color: #008ba4;
       padding: 4px 0 15px 0; }
-      #bundles .bundle.most-popular > .bundle-content:before {
+      #bundles .bundle.most-popular > .content:before {
         content: "Most Popular";
         display: block;
         color: #fff;
@@ -132,15 +190,18 @@ body {
         text-transform: uppercase;
         text-align: center;
         letter-spacing: 2px; }
-      #bundles .bundle.most-popular > .bundle-content > div {
+      #bundles .bundle.most-popular > .content > div {
         -webkit-box-shadow: 0 0 10px #007084;
         -moz-box-shadow: 0 0 10px #007084;
         box-shadow: 0 0 10px #007084;
         margin: 2px 10px 0 10px; }
-        #bundles .bundle.most-popular > .bundle-content > div .discount {
+        #bundles .bundle.most-popular > .content > div .discount {
           top: -40px;
           right: -38px; }
-  #bundles .bundle .bundle-content > div {
+          @media screen and (min-width: 992px) {
+            #bundles .bundle.most-popular > .content > div .discount {
+              top: -58px; } }
+  #bundles .bundle .content > div {
     -webkit-box-shadow: 0 0 10px #a5a5a5;
     -moz-box-shadow: 0 0 10px #a5a5a5;
     box-shadow: 0 0 10px #a5a5a5;
@@ -149,29 +210,29 @@ body {
     text-align: center;
     padding-top: 15px;
     padding-bottom: 35px; }
-    #bundles .bundle .bundle-content > div h1 {
+    #bundles .bundle .content > div h1 {
       font-size: 25px;
       font-weight: 800;
       margin-top: 12px;
       margin-bottom: 5px; }
-    #bundles .bundle .bundle-content > div h2 {
+    #bundles .bundle .content > div h2 {
       color: #008ba4;
       font-size: 19px;
       font-weight: 100;
       line-height: 22px;
       margin-top: 0; }
-    #bundles .bundle .bundle-content > div img {
+    #bundles .bundle .content > div img {
       display: block;
       margin: 30px auto 12px auto; }
-    #bundles .bundle .bundle-content > div .price {
+    #bundles .bundle .content > div .price {
       display: inline-block;
       position: relative;
       clear: both;
       font-size: 30px;
       font-weight: 800; }
-      #bundles .bundle .bundle-content > div .price sup {
+      #bundles .bundle .content > div .price sup {
         font-size: 19px; }
-      #bundles .bundle .bundle-content > div .price:after {
+      #bundles .bundle .content > div .price:after {
         content: "USD";
         display: block;
         position: absolute;
@@ -180,10 +241,10 @@ body {
         margin-top: -10%;
         font-size: 12px;
         text-decoration: underline; }
-    #bundles .bundle .bundle-content > div .daily-rate {
+    #bundles .bundle .content > div .daily-rate {
       background: transparent center center no-repeat url("../img/bg-highlight.png");
       font-size: 19px; }
-    #bundles .bundle .bundle-content > div .discount {
+    #bundles .bundle .content > div .discount {
       -webkit-border-radius: 100%;
       -moz-border-radius: 100%;
       border-radius: 100%;
@@ -202,7 +263,10 @@ body {
       text-transform: uppercase;
       background-color: #e87b15;
       padding-top: 17px; }
-      #bundles .bundle .bundle-content > div .discount em {
+      @media screen and (min-width: 992px) {
+        #bundles .bundle .content > div .discount {
+          right: -23px; } }
+      #bundles .bundle .content > div .discount em {
         font-size: 22px;
         font-style: normal; }
 
@@ -224,9 +288,22 @@ body {
   font-weight: 800;
   font-size: 18px;
   letter-spacing: 1px;
-  line-height: 36px; }
+  line-height: 36px;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  -moz-transition: box-shadow 0.2s;
+  -o-transition: box-shadow 0.2s;
+  -webkit-transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s; }
   .add-to-cart:hover, #buy-now .buy-now:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #fff;
+    background-color: #2b7d30;
+    -webkit-box-shadow: 0 6px 0 #30af76;
+    -moz-box-shadow: 0 6px 0 #30af76;
+    box-shadow: 0 6px 0 #30af76; }
   .add-to-cart .fa, #buy-now .buy-now .fa {
     margin-left: 10px;
     font-size: 16px; }
@@ -249,7 +326,7 @@ body {
 
 #supplement-facts table {
   width: 100%;
-  border: 2px solid #000;
+  border: 3px solid #000;
   border-collapse: separate;
   border-spacing: 5px;
   padding-bottom: 10px; }
@@ -284,42 +361,47 @@ body {
 
 #guarantee {
   margin-top: 20px; }
-  #guarantee > div > div {
-    background: #4c813d center center repeat url("../img/bg-green-leaves.jpg");
+  #guarantee .content {
+    background: #4c813d center center no-repeat url("../img/bg-green-leaves.jpg");
+    background-size: auto 100%;
     text-align: center;
-    padding: 21px;
-    margin-left: 15px;
-    margin-right: 15px; }
-  #guarantee > div > div > div {
-    background-color: #fff;
-    padding: 18px; }
-  #guarantee h1 {
-    margin-top: 36px;
-    text-align: left;
-    color: #e47832;
-    font-size: 29px;
-    font-weight: 800; }
-  #guarantee p {
-    text-align: left;
-    font-size: 18px; }
-  #guarantee aside {
-    text-align: center;
-    margin: 0px 30px; }
-    #guarantee aside img {
-      display: block;
-      margin: 0 auto; }
-    #guarantee aside p {
-      border-top: 2px solid #000;
-      padding: 18px;
-      margin-top: 2px; }
+    padding: 23px 36px 23px 36px; }
+    #guarantee .content > div > div {
+      background-color: #fff;
+      padding: 18px; }
+    #guarantee .content h1 {
+      margin-top: 36px;
+      text-align: left;
+      color: #e47832;
+      font-size: 29px;
+      font-weight: 800; }
+    #guarantee .content p {
+      text-align: left;
+      font-size: 18px; }
+    #guarantee .content aside {
+      text-align: center;
+      margin: 0px 30px; }
+      @media screen and (min-width: 768px) {
+        #guarantee .content aside {
+          width: 220px;
+          margin-left: auto;
+          margin-right: auto; } }
+      #guarantee .content aside img {
+        display: block;
+        margin: 0 auto; }
+      #guarantee .content aside p {
+        border-top: 2px solid #000;
+        padding: 18px;
+        margin-top: 2px; }
 
-#as-seen-on {
+#as-seen-on .content {
   -webkit-box-shadow: 0 0 10px #a5a5a5;
   -moz-box-shadow: 0 0 10px #a5a5a5;
   box-shadow: 0 0 10px #a5a5a5;
   padding: 0;
-  margin: 36px 15px 0 15px; }
-  #as-seen-on > h1 {
+  margin-top: 36px;
+  margin-bottom: 0; }
+  #as-seen-on .content > h1 {
     display: block;
     background-color: #4c813d;
     color: #fff;
@@ -328,15 +410,15 @@ body {
     text-align: center;
     padding: 0;
     margin: 0 0 18px 0; }
-  #as-seen-on div {
+  #as-seen-on .content div {
     text-align: center; }
-  #as-seen-on img {
+  #as-seen-on .content img {
     display: inline-block;
     margin: 0 auto; }
-    #as-seen-on img.book {
+    #as-seen-on .content img.book {
       float: left;
       margin: 25px 12px 0 12px; }
-  #as-seen-on p {
+  #as-seen-on .content p {
     float: left;
     margin-top: 25px;
     text-align: left;
@@ -385,6 +467,8 @@ footer {
     padding-right: 0; }
     footer .list-inline > li a {
       color: #757575; }
+      footer .list-inline > li a:hover {
+        color: #5c5c5c; }
     footer .list-inline > li:before {
       content: "|";
       padding-right: 5px; }

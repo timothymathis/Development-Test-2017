@@ -22,7 +22,7 @@ $(document).ready(function(){
   $("#buy-now .buy-now").click(function(){
     $("#bundles").show();
   });
-
+  
 });
 
 // Returns the current Pacific Standard Time in 24 hour 0000 format

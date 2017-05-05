@@ -16,18 +16,21 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+      <!-- Header -->
       <header class="container-fluid">
         <div class="row">
+          <!-- Header logo -->
           <div id="logo" class="col-sm-3 col-xs-12">
             <a href="/">
               <img src="img/logo-algaecal.jpg" alt="AlgaeCal">
             </a>
           </div>
+          <!-- Tap to Talk CTA -->
           <div id="tap-to-talk" class="col-lg-4 col-lg-offset-5 col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
             <a href="">
               <span class="tap">Tap to Talk</span>
               <span class="call">Call</span>
-              <span id="phone-number"></span>
+              <span id="phone-number"><!-- Phone number loads here --></span>
             </a>
             <p>
               <span><i class="fa fa-phone" aria-hidden="true"></i></span>
@@ -35,7 +38,7 @@
             </p>
           </div>
         </div>
-      </header>
+      </header><!-- End Header -->
 
       <!-- Introduction -->
       <section id="introducing" class="container-fluid">
@@ -54,17 +57,34 @@
       <!-- Video -->
       <section id="video" class="container-fluid">
         <h1>Build <strong>brand new bone</strong> WITHIN 6 MONTHS with this <strong>rare algae</strong> calcium ...even if you're 85!</h1>
-        <!--<div id="video-container">
+        <div id="video-container">
+          <!-- Play button -->
+          <div id="play-button-overlay">
+            <img id="play-button" src="img/play-button.png">
+            <img id="tap-to-play" src="img/tap-to-play.png">
+          </div>
+          <!-- Wistia video embed -->
           <script>
             window._wq = window._wq || [];
             _wq.push({
               id: "cecdwaq3dz",
+              options: {
+                autoPlay: false,
+                controlsVisibleOnLoad: false
+              },
               onReady: function(video) {
+                // Show the bundles at 2:13
                 video.bind("betweentimes", 133, 1045, function(withinInterval) {
                   if (withinInterval) {
                     $("#bundles").show();
                     return video.unbind;
                   }
+                });
+                $("#play-button-overlay").show(); // Show the play button when the video loads
+                // Play video and hide overlay when play button is clicked
+                $("#play-button-overlay").click(function() {
+                  video.play();
+                  $(this).hide();
                 });
               }
             });
@@ -72,15 +92,16 @@
           <script src="//fast.wistia.com/embed/medias/cecdwaq3dz.jsonp" async></script>
           <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
           <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_cecdwaq3dz videoFoam=true " style="height:100%;width:100%">&nbsp;</div></div></div>
-        </div>-->
+        </div>
       </section><!-- End Video -->
 
       <!-- Bundles -->
       <a name="bundles"></a>
-      <section style="display:block" id="bundles" class="container">
+      <section id="bundles" class="container">
         <div class="row">
-          <div class="bundle col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
-            <div class="bundle-content">
+          <!-- 3 Month Supply -->
+          <div class="bundle col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="content">
               <div>
                 <h1>3 Month Supply</h1>
                 <h2>
@@ -95,8 +116,9 @@
               </div>
             </div>
           </div>
-          <div class="bundle most-popular col-md-4 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
-            <div class="bundle-content">
+          <!-- 6 Month Supply -->
+          <div class="bundle most-popular col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="content">
               <div>
                 <h1>6 Month Supply</h1>
                 <h2>
@@ -111,8 +133,9 @@
               </div>
             </div>
           </div>
-          <div class="bundle col-md-3 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
-            <div class="bundle-content">
+          <!-- 12 Month Supply -->
+          <div class="bundle col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12">
+            <div class="content">
               <div>
                 <h1>12 Month Supply</h1>
                 <h2>
@@ -133,6 +156,7 @@
       <!-- Supplement Facts -->
       <section id="supplement-facts" class="container-fluid">
         <div class="row">
+          <!-- AlgaeCal Plus Supplement Facts -->
           <div class="col-sm-4 col-sm-offset-1 col-xs-12">
             <h1>AlgaeCal Plus</h1>
             <table>
@@ -194,11 +218,16 @@
                   <td></td>
                 </tr>
                 <tr><td class="thick bar" colspan="2"></td></tr>
-                <tr><td colspan="2"><span><sup>*</sup>Daily Value (DV) not established</span></td></tr>
+                <tr>
+                  <td colspan="2">
+                    <span><sup>*</sup>Daily Value (DV) not established</span>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
-          <div class="col-sm-4 col-sm-offset-1 col-xs-12">
+          <!-- Strontium Boost Supplement Facts -->
+          <div class="col-sm-4 col-sm-offset-2 col-xs-12">
             <h1>Strontium Boost</h1>
             <table>
               <thead>
@@ -222,7 +251,11 @@
                 <td>680 mg<sup>*</sup></td>
               </tr>
               <tr><td class="thick bar" colspan="2"></td></tr>
-              <tr><td colspan="2"><sup>*</sup><span>Daily Value (DV) not established</span></td></tr>
+              <tr>
+                <td colspan="2">
+                  <sup>*</sup><span>Daily Value (DV) not established</span>
+                </td>
+              </tr>
             </table>
           </div>
         </div>
@@ -230,39 +263,43 @@
 
       <!-- Guarantee -->
       <section id="guarantee" class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div>
-              <img src="img/7-year-guarantee.jpg" alt="Stronger Bones 7 Year Guarantee">
-              <h1>Stronger Bones For 7 Years Guarantee</h1>
-              <p>
-                When you follow directions for use of AlgaeCal Plus and Strontium
-                Boost &ndash; we guarantee you will see increased bone density in
-                Every follow-up bone scan you have while using these 2 products &ndash;
-                or we will refund every penny you oaid for our products between your
-                scans. This guarantee extends to every scan you have for the next 7
-                years! Also, if you are unsatisfied at any time you can return my
-                product for a full refund, no questions asked!
-                <a href="#"  data-toggle="modal" data-target="#guaranteeLongForm">Click Here for Details</a>
-              </p>
-              <aside>
-                <img class="img-responsive" src="img/dean-neuls-picture.png" alt="Dean Neuls">
-                <img class="img-responsive" src="img/dean-neuls-signature.jpg" alt="Dean Neuls' signature">
+        <div class="content">
+          <div class="row">
+            <div class="col-sm-12">
+              <div>
+                <img src="img/7-year-guarantee.jpg" alt="Stronger Bones 7 Year Guarantee">
+                <h1>Stronger Bones For 7 Years Guarantee</h1>
                 <p>
-                  <strong>Dean Neuls,</strong> <br>
-                  CEO and Co-Founder, <br>
-                  AlgaeCal Inc.
+                  When you follow directions for use of AlgaeCal Plus and Strontium
+                  Boost &ndash; we guarantee you will see increased bone density in
+                  Every follow-up bone scan you have while using these 2 products &ndash;
+                  or we will refund every penny you paid for our products between your
+                  scans. This guarantee extends to every scan you have for the next 7
+                  years! Also, if you are unsatisfied at any time you can return my
+                  product for a full refund, no questions asked!
+                  <a href="#"  data-toggle="modal" data-target="#guaranteeLongForm">Click Here for Details</a>
                 </p>
-              </aside>
-              <div class="modal fade" id="guaranteeLongForm" tabindex="-1" role="dialog" aria-labelledby="guaranteeLongFormLabel">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="guaranteeLongFormLabel">Strong Bones for 7 Years Guarantee</h4>
-                    </div>
-                    <div class="modal-body">
-
+                <!-- Dean Neuls section -->
+                <aside>
+                  <img class="img-responsive" src="img/dean-neuls-picture.png" alt="Dean Neuls">
+                  <img class="img-responsive" src="img/dean-neuls-signature.jpg" alt="Dean Neuls' signature">
+                  <p>
+                    <strong>Dean Neuls,</strong> <br>
+                    CEO and Co-Founder, <br>
+                    AlgaeCal Inc.
+                  </p>
+                </aside>
+                <!-- Guarantee long form modal -->
+                <div class="modal fade" id="guaranteeLongForm" tabindex="-1" role="dialog" aria-labelledby="guaranteeLongFormLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="guaranteeLongFormLabel">Strong Bones for 7 Years Guarantee</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Guarantee long form loads here -->
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -274,34 +311,36 @@
 
       <!-- As Seen On -->
       <section id="as-seen-on" class="container">
-        <h1>As Seen On:</h1>
-        <div class="row">
-          <div class="col-xs-3"><img class="img-responsive" src="img/the-dr-oz-show.png" alt="The Dr. Oz Show"></div>
-          <div class="col-xs-2"><img class="img-responsive" src="img/fox-news-channel.png" alt="Fox News Channel"></div>
-          <div class="col-xs-3"><img class="img-responsive" src="img/pbs.png" alt="PBS"></div>
-          <div class="col-xs-4"><img class="img-responsive" src="img/amazon.png" alt="Amazon"></div>
-        </div>
-        <div class="row">
-          <div class="col-xs-6">
-            <img class="book" src="img/forever-young-nicholas-perricone.png" alt="Forever Young by Nicholas Perricone">
-            <p>
-              <strong><em>Forever Young</em></strong><br>
-              book by<br>
-              <strong>Nicholas Perricone</strong>
-            </p>
-          </div>
-          <div class="col-xs-6">
-            <img class="book" src="img/your-bones-lara-pizzorno.png" alt="Your Bones by Lara Pizzorno">
-            <p>
-              <strong><em>Your Bones</em></strong><br>
-              book by<br>
-              <strong>Lara Pizzorno</strong>
-            </p>
+        <div class="content">
+          <h1>As Seen On:</h1>
+          <div class="row">
+            <!-- Logos -->
+            <div class="col-sm-3 col-xs-3"><img class="img-responsive" src="img/the-dr-oz-show.png" alt="The Dr. Oz Show"></div>
+            <div class="col-sm-3 col-xs-2"><img class="img-responsive" src="img/fox-news-channel.png" alt="Fox News Channel"></div>
+            <div class="col-sm-3 col-xs-3"><img class="img-responsive" src="img/pbs.png" alt="PBS"></div>
+            <div class="col-sm-3 col-xs-4"><img class="img-responsive" src="img/amazon.png" alt="Amazon"></div>
+            <!-- Books -->
+            <div class="col-sm-3 col-sm-offset-3 col-xs-6 clear-left">
+              <img class="book" src="img/forever-young-nicholas-perricone.png" alt="Forever Young by Nicholas Perricone">
+              <p>
+                <strong><em>Forever Young</em></strong><br>
+                book by<br>
+                <strong>Nicholas Perricone</strong>
+              </p>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+              <img class="book" src="img/your-bones-lara-pizzorno.png" alt="Your Bones by Lara Pizzorno">
+              <p>
+                <strong><em>Your Bones</em></strong><br>
+                book by<br>
+                <strong>Lara Pizzorno</strong>
+              </p>
+            </div>
           </div>
         </div>
       </section><!-- End As Seen On -->
 
-      <!-- References -->
+      <!-- Scientific References -->
       <section id="references" class="container"-fluid"">
         <h1>Scientific References</h1>
         <ol>
@@ -329,12 +368,14 @@
 
       <footer class="container-fluid">
         <div class="row">
-          <div class="col-md-2 col-sm-12">
+          <!-- Footer logo -->
+          <div class="col-xs-12">
             <a href="/">
               <img src="img/logo-algaecal.jpg" alt="AlgaeCal">
             </a>
           </div>
-          <div class="col-md-10 col-sm-12">
+          <!-- Footer links -->
+          <div class="col-xs-12">
             <ul class="list-inline">
               <li><a href="#">Shipping & Returns</a></li>
               <li><a href="#">Health Disclaimer</a></li>
@@ -343,7 +384,7 @@
               <li><a href="#">Order Now</a></li>
             </ul>
           </div>
-          <div class="col-sm-12">Copyright &copy; 2017 AlgaeCal</div>
+          <div class="col-xs-12">Copyright &copy; 2017 AlgaeCal</div>
         </div>
       </footer>
 

@@ -31,13 +31,22 @@ body {
     font-weight: 800;
   }
 
+  a {
+    @include transition(color .2s);
+  }
+
   p a {
     color: $light-blue;
     text-decoration: underline;
   }
 
+  .clear-left {
+    clear: left;
+  }
+
 }
 
+// AlgaeCal logo in header
 #logo {
   margin-top: 1px;
   padding-left: 30px;
@@ -49,9 +58,15 @@ body {
 
 }
 
+// Tap to Talk CTA in header
 #tap-to-talk {
   display: none;
   padding-left: 30px;
+
+  // Add space above on larger screens
+  @media screen and (min-width: $small-devices) {
+    margin-top: 20px;
+  }
 
   a {
     color: #000;
@@ -62,6 +77,7 @@ body {
       text-decoration: none;
     }
 
+    // Display "Call" rather than "Tap to Talk" on larger (non-phone) screens
     .call {
       display: none;
 
@@ -106,10 +122,15 @@ body {
 
 }
 
+// Green "INTRODUCING" section under header
 #introducing {
     background: $extra-dark-green top left repeat-x url("#{$image-path}/bg-green-leaves.jpg");
+    background-size: 100%;
     color: #fff;
     text-align: center;
+    -moz-box-shadow: inset 0 -10px 10px -10px rgba(255, 255, 255, 0.83);
+    -webkit-box-shadow: inset 0 -10px 10px -10px rgba(255, 255, 255, 0.83);
+    box-shadow: inset 0 -10px 10px -10px rgba(255, 255, 255, 0.83);
 
     h1 {
        display: inline-block;
@@ -123,6 +144,8 @@ body {
        margin-bottom: 12px;
        text-align: center;
 
+       // Horizontal lines around "INTRODUCING"
+       // Line on left side
        &:before {
            content: " ";
            display: block;
@@ -133,7 +156,7 @@ body {
            height: 2px;
            background-color: #fff;
        }
-
+       // Line on right side
        &:after {
            content: " ";
            display: block;
@@ -156,17 +179,19 @@ body {
        margin-bottom: 12px;
        margin-left: 15px;
 
+       // Center the text on larger screens
        @media screen and (min-width: $small-devices) {
           text-align: center;
         }
 
+       // Text with red underline
        em {
          font-size: 40px;
          font-style: normal;
          background: transparent bottom left no-repeat url("#{$image-path}/bg-underline.png");
          padding-bottom: 4px;
        }
-
+       // Asterisk
        sup {
            font-size: 25px;
        }
@@ -175,34 +200,112 @@ body {
 
 }
 
+// Video section
 #video {
 
+  // Headline above video "Build brand new bones..."
   h1 {
     font-size: 20px;
     line-height: 25px;
     margin-top: 19px;
     margin-bottom: 15px;
+
+    // Center for larger screens
+    @media screen and (min-width: $small-devices) {
+        text-align: center;
+    }
+
+  }
+
+  // Div wrapping the video
+  #video-container {
+    position: relative;
+
+    // Shrink the video for larger screens
+    @media screen and (min-width: $small-devices) {
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    // Layer over the video
+    #play-button-overlay {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      cursor: pointer;
+
+      // Custom play button overlay
+      #play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -52px;
+        margin-left: -63px;
+      }
+
+      // "Tap to Play" text and arrow
+      #tap-to-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: 35px;
+
+        // Hide "Tap to Play" for larger screens
+        @media screen and (min-width: $small-devices) {
+          display: none;
+        }
+
+      }
+
+    }
+
   }
 
 }
 
+// Product bundles
 #bundles {
   display: none;
+  margin-top: 32px;
 
+  // Add more space at the top for larger screens
+  @media screen and (min-width: $small-devices) {
+     margin-top: 52px;
+   }
+
+   // Individual product bundle
   .bundle {
-    @media screen and (max-width: $small-devices) {
-       padding: 0 57px 30px 42px;
+    // Adjust padding for small screens
+    @media screen and (max-width: $medium-devices) {
+       padding: 20px 57px 30px 42px;
      }
+    //adjust padding for larger screens
+    @media screen and (min-width: $medium-devices) {
+      padding: 0 22px;
+    }
 
+    // Most Popular bundle, outlined in blue
     &.most-popular {
       padding-left: 32px;
       padding-right: 48px;
 
-      >.bundle-content {
+      // Adjust padding for larger screens
+      @media screen and (min-width: $medium-devices) {
+         padding: 0 18px;
+       }
+
+       // Blue background
+      >.content {
         @include box-shadow(0, 0, 10px, $box-shadow-color);
         background-color: $dark-blue;
         padding: 4px 0 15px 0;
 
+        // MOST POPULAR text above bundle
         &:before {
           content: "Most Popular";
           display: block;
@@ -214,20 +317,29 @@ body {
           letter-spacing: 2px;
         }
 
+        // White background
         > div {
           @include box-shadow(0, 0, 10px, #007084);
           margin: 2px 10px 0 10px;
 
+          // Orange circle with percentage
           .discount {
             top: -40px;
             right: -38px;
+
+            // Adjust circle position for larger screens
+            @media screen and (min-width: $medium-devices) {
+               top: -58px;
+             }
+
           }
 
         }
       }
     }
 
-    .bundle-content {
+    // Ordinary bundle content (not "MOST POPULAR")
+    .content {
 
       > div {
         @include box-shadow(0, 0, 10px, $box-shadow-color);
@@ -237,6 +349,7 @@ body {
         padding-top: 15px;
         padding-bottom: 35px;
 
+        // Title, ie. 3 Month Supply
         h1 {
             font-size: 25px;
             font-weight: 800;
@@ -244,6 +357,7 @@ body {
             margin-bottom: 5px;
         }
 
+        // Bundle contents, ie. 4 AlgaeCal Plus...
         h2 {
             color: $dark-blue;
             font-size: 19px;
@@ -252,11 +366,13 @@ body {
             margin-top: 0;
         }
 
+        // Product image
         img {
             display: block;
             margin: 30px auto 12px auto;
         }
 
+        // Price
         .price {
             display: inline-block;
             position: relative;
@@ -264,10 +380,12 @@ body {
             font-size: 30px;
             font-weight: 800;
 
+            // Dollar sign
             sup {
               font-size: 19px;
             }
 
+            // USD text after the price
             &:after {
                 content: "USD";
                 display: block;
@@ -281,11 +399,13 @@ body {
 
           }
 
+          // Price per day, ie. $2.58/day
           .daily-rate {
             background: transparent center center no-repeat url("#{$image-path}/bg-highlight.png");
             font-size: 19px;
           }
 
+          // Orange circle with percentage
           .discount {
             @include rounded(100%);
             @include box-shadow(0, 0, 10px, $box-shadow-color);
@@ -302,6 +422,12 @@ body {
             background-color: $orange;
             padding-top: 17px;
 
+            // Adjust circle position for larger screens
+            @media screen and (min-width: $medium-devices) {
+               right: -23px;
+             }
+
+            // Percentage inside circle
             em {
               font-size: 22px;
               font-style: normal;
@@ -317,6 +443,7 @@ body {
 
   }
 
+// Add to cart button
 .add-to-cart {
   @include rounded(7px);
   @include box-shadow(0, 6px, 0, $dark-green);
@@ -332,16 +459,23 @@ body {
   font-size: 18px;
   letter-spacing: 1px;
   line-height: 36px;
+  @include transition(background-color .2s);
+  @include transition(box-shadow .2s);
 
   &:hover {
     text-decoration: none;
+    color: #fff;
+    background-color: darken($green,10%);
+    @include box-shadow(0, 6px, 0, lighten($dark-green, 10%));
   }
 
+  // Triangle, after "Add to Cart"
   .fa {
     margin-left: 10px;
     font-size: 16px;
   }
 
+  // 7 Year Guarantee seal, before "Add to Cart"
   &:before {
     content: " ";
     display: block;
@@ -356,8 +490,10 @@ body {
 
 }
 
+// Supplement Facts section
 #supplement-facts {
 
+  // Product title, ie. AlgalCal Plus
   h1 {
     text-align: center;
     font-size: 30px;
@@ -367,11 +503,12 @@ body {
 
   table {
     width: 100%;
-    border: 2px solid #000;
+    border: 3px solid #000;
     border-collapse: separate;
     border-spacing: 5px;
     padding-bottom: 10px;
 
+    // "Supplement Facts" title
     thead {
 
       th {
@@ -382,28 +519,33 @@ body {
 
     }
 
+    // Table cells
     td {
       vertical-align: top;
       font-size: 17px;
       font-weight: $bold;
       line-height: 17px;
 
+      // First column
       &:first-child{
         width: 60%;
       }
       line-height: 17px;
 
+      // Second column
       &:nth-child(2){
         width: 40%;
         text-align: right;
       }
 
+      // "Amount per Serving" text
       em {
         font-size: 18px;
         font-style: normal;
         font-weight: $normal;
       }
 
+      // Subtext under each vitamin/mineral, ie. "(as calcium ascorbate)"
       span {
         font-size: 15px;
         line-height: 22px;
@@ -411,6 +553,7 @@ body {
 
     }
 
+    // Black bars seperating the table sections
     .bar {
       background-color: #000;
 
@@ -428,95 +571,122 @@ body {
 
 }
 
+// 7 Year Strong Bones Guarantee section
 #guarantee {
   margin-top: 20px;
 
-  > div > div {
-    background: $extra-dark-green center center repeat url("#{$image-path}/bg-green-leaves.jpg");
+  // Green outer box
+  .content {
+    background: $extra-dark-green center center no-repeat url("#{$image-path}/bg-green-leaves.jpg");
+    background-size: auto 100%;
     text-align: center;
-    padding: 21px;
-    margin-left: 15px;
-    margin-right: 15px;
+    padding: 23px 36px 23px 36px;
+
+    // White inner box
+    > div > div {
+      background-color: #fff;
+      padding: 18px;
+    }
+
+    // Title, "Strong Bones for 7..."
+    h1 {
+      margin-top: 36px;
+      text-align: left;
+      color: #e47832;
+      font-size: 29px;
+      font-weight: $bold;
+    }
+
+    // Text
+    p {
+      text-align: left;
+      font-size: 18px;
+    }
+
+    // Dean Neuls section
+    aside {
+      text-align: center;
+      margin: 0px 30px;
+
+      // Center for larger screens
+      @media screen and (min-width: $small-devices) {
+        width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      // Photo and signature
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      p {
+        border-top: 2px solid #000;
+        padding: 18px;
+        margin-top: 2px;
+      }
+
+    }
+
   }
 
-  > div > div > div {
-    background-color: #fff;
-    padding: 18px;
-  }
+}
 
-  h1 {
+
+// As Seen On section
+#as-seen-on {
+
+  .content {
+    @include box-shadow(0, 0, 10px, $box-shadow-color);
+    padding: 0;
     margin-top: 36px;
-    text-align: left;
-    color: #e47832;
-    font-size: 29px;
-    font-weight: $bold;
-  }
+    margin-bottom: 0;
 
-  p {
-    text-align: left;
-    font-size: 18px;
-  }
+    // Green title bar, "As Seen On"
+    > h1 {
+      display: block;
+      background-color: $extra-dark-green;
+      color: #fff;
+      font-size: 20px;
+      line-height: 36px;
+      text-align: center;
+      padding: 0;
+      margin: 0 0 18px 0;
+    }
 
-  aside {
-    text-align: center;
-    margin: 0px 30px;
+    // Center the images within the columns
+    div {
+      text-align: center;
+    }
 
     img {
-      display: block;
+      display: inline-block;
       margin: 0 auto;
+
+      // Book images
+      &.book {
+        float: left;
+        margin: 25px 12px 0 12px;
+      }
     }
 
+    // Book title and author
     p {
-      border-top: 2px solid #000;
-      padding: 18px;
-      margin-top: 2px;
-    }
-
-  }
-
-}
-
-#as-seen-on {
-  @include box-shadow(0, 0, 10px, $box-shadow-color);
-  padding: 0;
-  margin: 36px 15px 0 15px;
-
-  > h1 {
-    display: block;
-    background-color: $extra-dark-green;
-    color: #fff;
-    font-size: 20px;
-    line-height: 36px;
-    text-align: center;
-    padding: 0;
-    margin: 0 0 18px 0;
-  }
-
-  div {
-    text-align: center;
-  }
-
-  img {
-    display: inline-block;
-    margin: 0 auto;
-
-    &.book {
       float: left;
-      margin: 25px 12px 0 12px;
+      margin-top: 25px;
+      text-align: left;
+      font-size: 12px;
     }
-  }
 
-  p {
-    float: left;
-    margin-top: 25px;
-    text-align: left;
-    font-size: 12px;
   }
 
 }
 
+// Scientific references section
 #references {
 
+  // Title, Scientific References
   h1 {
     color: $dark-blue;
     font-size: 22px;
@@ -524,6 +694,7 @@ body {
     text-align: center;
   }
 
+  // List of references
   ol{
     padding-right: 73px;
     padding-left: 83px;
@@ -537,17 +708,19 @@ body {
 
 }
 
+// Buy Now section
 #buy-now {
   margin-top: 45px;
   text-align: center;
 
-
+  // Buy Now button
   .buy-now {
     @extend .add-to-cart;
     @include box-shadow(0, 8px, 0, $dark-green);
     padding: 8px 60px 8px 100px;
     font-size: 22px;
 
+    // 7 Year guarantee seal before "Buy Now"
     &:before {
       left: -31px;
       width: 100px;
@@ -555,6 +728,7 @@ body {
       background-image: url("#{$image-path}/7-year-guarantee-buy-now.png");
     }
 
+    // Triangle after "Buy Now"
     .fa {
       font-size: 22px;
     }
@@ -569,10 +743,12 @@ footer {
   text-align: center;
   font-size: 18px;
 
+  // Footer logo
   img {
     margin-bottom: 13px;
   }
 
+  // Footer links
   .list-inline > li {
     color: #616161;
     font-size: 18px;
@@ -580,13 +756,19 @@ footer {
 
     a {
       color: #757575;
+
+      &:hover {
+        color: darken(#757575, 10%);
+      }
     }
 
+    // Seperator "|"
     &:before {
       content: "|";
       padding-right: 5px;
     }
 
+    // Remove seperator for first link
     &:first-child:before {
       content: "";
     }
