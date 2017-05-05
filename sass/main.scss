@@ -577,7 +577,7 @@ body {
 
   // Green outer box
   .content {
-    background: $extra-dark-green center center no-repeat url("#{$image-path}/bg-green-leaves.jpg");
+    background: $extra-dark-green center center repeat-x url("#{$image-path}/bg-green-leaves.jpg");
     background-size: auto 100%;
     text-align: center;
     padding: 23px 36px 23px 36px;

@@ -362,7 +362,7 @@ body {
 #guarantee {
   margin-top: 20px; }
   #guarantee .content {
-    background: #4c813d center center no-repeat url("../img/bg-green-leaves.jpg");
+    background: #4c813d center center repeat-x url("../img/bg-green-leaves.jpg");
     background-size: auto 100%;
     text-align: center;
     padding: 23px 36px 23px 36px; }
