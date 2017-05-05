@@ -3,26 +3,28 @@ $(document).ready(function(){
   // Load values from REST API
   $.getJSON( "https://www.algaecal.com/wp-json/acf/v2/options", function( data ) {
 
-    // Update the phone number CTA with the office number
-    var phoneNumber = data.acf.default_phone_number;
-    $("#tap-to-talk #phone-number").html(phoneNumber.replace(/\./g,"-"));
-    $("#tap-to-talk>a").attr("href", "tel:"+phoneNumber.replace(/\./g,""));
-
     // Populate the "7 Years Strong Bone Guarantee" modal
     var guaranteeFull = data.acf["7yr_full_copy"];
     $("#guaranteeLongForm .modal-body").html(guaranteeFull);
 
     // Show the Tap to Talk CTA if current time is within office hours
     var officeHours = data.acf.office_hours;
-    if(isOfficeOpen(officeHours))
+    if(isOfficeOpen(officeHours)){
+
+      // Update the phone number CTA with the office number
+      var phoneNumber = data.acf.default_phone_number;
+      $("#tap-to-talk #phone-number").html(phoneNumber.replace(/\./g,"-"));
+      $("#tap-to-talk>a").attr("href", "tel:"+phoneNumber.replace(/\./g,""));
+      
       $("#tap-to-talk").show();
+    }
   });
 
   // Show the bundles when the Buy Now button is clicked, just in case the video hasn't played past 2:13
   $("#buy-now .buy-now").click(function(){
     $("#bundles").show();
   });
-  
+
 });
 
 // Returns the current Pacific Standard Time in 24 hour 0000 format
